@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+    {% block style %}
+    form, input{
+        text-align: center;
+    }
+
+    input, textarea {
+        text-align:center;
+        background-color:rgba(255,255,255,0.3);
+        border: 0px solid;
+        color:black;
+        weight: 100%;
+        height:100%;
+        border-radius: 10px;
+        font-size: 25px;
+    }
+
+    #submit{
+        font-size: 20px;
+    }
+
+    #submit:hover{
+        background-color: #524f48;
+        color:white;
+        transition: .3s ease-in-out;
+    }
+    {% endblock style %}
+
+        {% block current_page %} Setari {% endblock current_page %}
+
+        {% block title %} <title> Setari! </title> {% endblock title %}
+
+            {% block content %}
+                <div class="inputs_settings">
+                    <!-- Acest messages este invechit. -->
+                {% for mesaj in messages %}
+                    <h3>{{ mesaj }}</h3>
+                    {% endfor %}
+                    <form action="" method="POST">
+                        {% csrf_token %}
+                        <h6>Nickname</h6><input type="text" name="username" placeholder="Username" value="{{ user.username }}"><br><br>
+                        <h6 style="padding-top: 5px">Email:</h6><input type="email" name="email" placeholder="Email" value="{{ user.email }}"><br>
+                        <!-- TODO: Adauga sa modifici si parola -->
+                        <br><input type="submit" name="submit" id="submit" value="Salveaza modificarile!">
+                    </form>
+                </div>
+            {% endblock content %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block style %}
+    #login{
+        text-align:center;
+    }
+
+    input{
+        outline: none;
+        border-style: none;
+        background-color:rgba(7, 1, 1, 0.281);
+        text-align:center;
+        margin-top: 1rem;
+        font-size: 20px;
+        border-radius: 5px;
+    }
+
+    input::placeholder{
+        color:white;
+    }
+
+    #submit:hover{
+        background-color: #2e2c27;
+        color:white;
+        transition: .3s ease-in-out;
+    }
+{% endblock style %}
+
+{% block current_page %}
+Login
+{% endblock current_page %}
+
+{% block title %}
+<title> Login Page! </title>
+{% endblock title %}
+
+{% block content %}
+<script type="text/javascript">
+    function VerificareBifa() {
+        var x = document.getElementById('password');
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
+
+<div class="container">
+    {% for mesaj in messages %}
+        {% if mesaj.tags == "error" %}
+        <div id="message_Show" style="position: fixed; text-align: center"
+             class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong style="color: red">Eroare!</strong> {{ mesaj }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endif %}
+    {% endfor %}
+    <div style="padding-top: 10%;" id="login" class="login cases">
+        <h3>Conectează-te la cont:</h3>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Nume cont"><br>
+            <input id="password" type="password" name="password" placeholder="Parola"><br>
+            <span>Vezi parola </span><input type="checkbox" id="box" onclick="VerificareBifa()"><br>
+            <input id="submit" type="submit" value="Login">
+        </form>
+        <div style="margin-top: 10px;"><span>Nu ai cont? Dai click </span><a href="/accounts_app/register/">aici.</a>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
