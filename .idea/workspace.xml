@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cd4514b-96a5-4acc-84b7-73965276b16b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Web/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Web/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Web/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +88,11 @@
       <workItem from="1582611040507" duration="386000" />
       <workItem from="1582611442532" duration="2188000" />
       <workItem from="1582646527356" duration="6076000" />
-      <workItem from="1582742811363" duration="1736000" />
+      <workItem from="1582742811363" duration="2942000" />
+      <workItem from="1582745770705" duration="917000" />
+      <workItem from="1583064394900" duration="375000" />
+      <workItem from="1583092401978" duration="371000" />
+      <workItem from="1583092792532" duration="2480000" />
     </task>
     <servers />
   </component>
@@ -95,22 +100,38 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2508" height="394" key="GridCell.Tab.0.bottom" timestamp="1582613630689">
+    <state width="2508" height="394" key="GridCell.Tab.0.bottom" timestamp="1582746360958">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2508" height="394" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582613630689" />
-    <state width="2508" height="394" key="GridCell.Tab.0.center" timestamp="1582613630689">
+    <state width="2508" height="394" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582746360958" />
+    <state width="2508" height="394" key="GridCell.Tab.0.center" timestamp="1582746360958">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2508" height="394" key="GridCell.Tab.0.center/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582613630689" />
-    <state width="2508" height="394" key="GridCell.Tab.0.left" timestamp="1582613630689">
+    <state width="2508" height="394" key="GridCell.Tab.0.center/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582746360958" />
+    <state width="2508" height="394" key="GridCell.Tab.0.left" timestamp="1582746360957">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2508" height="394" key="GridCell.Tab.0.left/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582613630689" />
-    <state width="2508" height="394" key="GridCell.Tab.0.right" timestamp="1582613630689">
+    <state width="2508" height="394" key="GridCell.Tab.0.left/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582746360957" />
+    <state width="2508" height="394" key="GridCell.Tab.0.right" timestamp="1582746360958">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2508" height="394" key="GridCell.Tab.0.right/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582613630689" />
+    <state width="2508" height="394" key="GridCell.Tab.0.right/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582746360958" />
+    <state width="2508" height="483" key="GridCell.Tab.1.bottom" timestamp="1582746351051">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2508" height="483" key="GridCell.Tab.1.bottom/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582746351051" />
+    <state width="2508" height="483" key="GridCell.Tab.1.center" timestamp="1582746351051">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2508" height="483" key="GridCell.Tab.1.center/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582746351051" />
+    <state width="2508" height="483" key="GridCell.Tab.1.left" timestamp="1582746351051">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2508" height="483" key="GridCell.Tab.1.left/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582746351051" />
+    <state width="2508" height="483" key="GridCell.Tab.1.right" timestamp="1582746351051">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2508" height="483" key="GridCell.Tab.1.right/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582746351051" />
     <state x="779" y="332" key="SettingsEditor" timestamp="1582660449702">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -119,16 +140,9 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="958" y="525" key="com.intellij.ide.util.TipDialog/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582611457367" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="django-line">
-          <url>file://$PROJECT_DIR$/templates/login.html</url>
-          <line>50</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="826" y="426" width="887" height="537" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1582746337709">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="826" y="426" width="887" height="537" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582746337709" />
   </component>
 </project>

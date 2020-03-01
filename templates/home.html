@@ -98,138 +98,140 @@
                 </button>
             </div>
             <div class="show_text_collapse">
-                {% csrf_token %}
-                <div id="Github" class="collapse">
-                    <div class="col-auto">
-                      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                      <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text"> <i style="color: #333; margin-right: 5px;" class="fab fa-github"></i> Github profile link:</div>
-                        </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" value="https://github.com/" placeholder="Link from Github!">
-                      </div>
-                    </div>
-                </div>
-
-                <div id="Facebook" class="collapse">
+                <form action="" method="POST">
                     {% csrf_token %}
-                    <div class="col-auto">
-                      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                      <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text"><i style="color: #3578E5; margin-right: 5px;" class="fab fa-facebook-f"></i> Facebook profile link </div>
+                    <div id="Github" class="collapse">
+                        <div class="col-auto">
+                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                          <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"> <i style="color: #333; margin-right: 5px;" class="fab fa-github"></i> Github profile link:</div>
+                            </div>
+                            <input type="text" class="form-control" name="Github_input" value="https://github.com/" placeholder="Link from Github!">
+                          </div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" value="https://www.facebook.com/" placeholder="Link from Facebook!">
-                      </div>
                     </div>
-                </div>
 
-                <div id="Instagram" class="collapse">
-                    {% csrf_token %}
-                    <div class="col-auto">
-                      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                      <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text"><i style="color:#c11194; margin-right: 5px;" class="fab fa-instagram"></i> Instagram profile link: </div>
+                    <div id="Facebook" class="collapse">
+                        {% csrf_token %}
+                        <div class="col-auto">
+                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                          <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"><i style="color: #3578E5; margin-right: 5px;" class="fab fa-facebook-f"></i> Facebook profile link </div>
+                            </div>
+                            <input type="text" class="form-control" name="Facebook_input" value="https://www.facebook.com/" placeholder="Link from Facebook!">
+                          </div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" value="https://www.instagram.com/" placeholder="Link from Instagram!">
-                      </div>
                     </div>
-                </div>
 
-                <div id="Gmail" class="collapse">
-                    {% csrf_token %}
-                    <div class="col-auto">
-                      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                      <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text"> <i style="color: #ef0c0b; margin-right: 5px;" class="fab fa-google-plus-g"></i> Your Gmail address: </div>
+                    <div id="Instagram" class="collapse">
+                        {% csrf_token %}
+                        <div class="col-auto">
+                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                          <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"><i style="color:#c11194; margin-right: 5px;" class="fab fa-instagram"></i> Instagram profile link: </div>
+                            </div>
+                            <input type="text" class="form-control" name="Instagram_input" value="https://www.instagram.com/" placeholder="Link from Instagram!">
+                          </div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="ex: nicolae.elisei1999@gmail.com">
-                      </div>
                     </div>
-                </div>
 
-                <div id="Youtube" class="collapse">
-                    {% csrf_token %}
-                    <div class="col-auto">
-                      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                      <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text"><i style="color: #FF0000; margin-right: 5px;" class="fab fa-youtube"></i>Youtube profile link: </div>
+                    <div id="Gmail" class="collapse">
+                        {% csrf_token %}
+                        <div class="col-auto">
+                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                          <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"> <i style="color: #ef0c0b; margin-right: 5px;" class="fab fa-google-plus-g"></i> Your Gmail address: </div>
+                            </div>
+                            <input type="text" class="form-control" name="Gmail_input" placeholder="ex: nicolae.elisei1999@gmail.com">
+                          </div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" value="https://www.youtube.com/channel/" placeholder="Link from Youtube!">
-                      </div>
                     </div>
-                </div>
 
-                <div id="Linkedin" class="collapse">
-                    {% csrf_token %}
-                    <div class="col-auto">
-                      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                      <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text"><i style="color: #0077B5; margin-right: 5px;" class="fab fa-linkedin"></i> Linkedin profile link: </div>
+                    <div id="Youtube" class="collapse">
+                        {% csrf_token %}
+                        <div class="col-auto">
+                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                          <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"><i style="color: #FF0000; margin-right: 5px;" class="fab fa-youtube"></i>Youtube profile link: </div>
+                            </div>
+                            <input type="text" class="form-control" name="Youtube_input" value="https://www.youtube.com/channel/" placeholder="Link from Youtube!">
+                          </div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" value="https://www.linkedin.com/in/" placeholder="Link from Linkedin!">
-                      </div>
                     </div>
-                </div>
 
-                <div id="Discord" class="collapse">
-                    {% csrf_token %}
-                    <div class="col-auto">
-                      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                      <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text"><i style="color: #7289DA; margin-right: 5px;" class="fab fa-discord"></i> Discord name and id: </div>
+                    <div id="Linkedin" class="collapse">
+                        {% csrf_token %}
+                        <div class="col-auto">
+                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                          <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"><i style="color: #0077B5; margin-right: 5px;" class="fab fa-linkedin"></i> Linkedin profile link: </div>
+                            </div>
+                            <input type="text" class="form-control" name="Linkedin_input" value="https://www.linkedin.com/in/" placeholder="Link from Linkedin!">
+                          </div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup"  placeholder="ex: Username#0000">
-                      </div>
                     </div>
-                </div>
 
-                <div id="Skype" class="collapse">
-                    {% csrf_token %}
-                    <div class="col-auto">
-                      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                      <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text"><i style="color:#00AFF0; margin-right: 5px;" class="fab fa-skype"></i> Your skype name: </div>
+                    <div id="Discord" class="collapse">
+                        {% csrf_token %}
+                        <div class="col-auto">
+                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                          <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"><i style="color: #7289DA; margin-right: 5px;" class="fab fa-discord"></i> Discord name and id: </div>
+                            </div>
+                            <input type="text" class="form-control" name="Discord_input"  placeholder="ex: Username#0000">
+                          </div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="ex: test123">
-                      </div>
                     </div>
-                </div>
 
-                <div id="Steam" class="collapse">
-                    {% csrf_token %}
-                    <div class="col-auto">
-                      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                      <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text"><i style="color:#112758; margin-right: 5px;" class="fab fa-steam"></i>Steam profile link: </div>
+                    <div id="Skype" class="collapse">
+                        {% csrf_token %}
+                        <div class="col-auto">
+                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                          <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"><i style="color:#00AFF0; margin-right: 5px;" class="fab fa-skype"></i> Your skype name: </div>
+                            </div>
+                            <input type="text" class="form-control" name="Skype_input" placeholder="ex: test123">
+                          </div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" value="https://steamcommunity.com/profiles/" placeholder="ex: https://steamcommunity.com/profiles/76561198333572394/">
-                      </div>
                     </div>
-                </div>
 
-                <div id="Paypal" class="collapse">
-                    {% csrf_token %}
-                    <div class="col-auto">
-                      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                      <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text"><i style="color: #3578E5; margin-right: 5px;" class="fab fa-cc-paypal"></i>Your Paypal link: </div>
+                    <div id="Steam" class="collapse">
+                        {% csrf_token %}
+                        <div class="col-auto">
+                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                          <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"><i style="color:#112758; margin-right: 5px;" class="fab fa-steam"></i>Steam profile link: </div>
+                            </div>
+                            <input type="text" class="form-control" name="Steam_input" value="https://steamcommunity.com/profiles/" placeholder="ex: https://steamcommunity.com/profiles/76561198333572394/">
+                          </div>
                         </div>
-                        <input type="text" class="form-control" id="inlineFormInputGroup" value="paypal.me/" placeholder="ex: paypal.me/EliseiNicolae">
-                      </div>
                     </div>
-                </div>
-            </div>
-            <div style="text-align: center">
-                 <button style="font-size:20px ">UPDATE</button>
+
+                    <div id="Paypal" class="collapse">
+                        {% csrf_token %}
+                        <div class="col-auto">
+                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                          <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text"><i style="color: #3578E5; margin-right: 5px;" class="fab fa-cc-paypal"></i>Your Paypal link: </div>
+                            </div>
+                            <input type="text" class="form-control" name="Paypal_input" value="paypal.me/" placeholder="ex: paypal.me/EliseiNicolae">
+                          </div>
+                        </div>
+                    </div>
+                    <div style="text-align: center">
+                        <input style="font-size:20px;" id="submit" type="Submit" name="submit" value="UPDATE"/>
+                    </div>
+                </form>
             </div>
 
      {% else %}
