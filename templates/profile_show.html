@@ -1,5 +1,21 @@
 {% extends 'base.html' %}
 
+{% block style %}
+    i{
+        font-size: 50px;
+        text-align: center;
+        padding: 2px;
+        <!-- TODO: Pentru a o centra foloseste ceva animatie-->
+    }
+
+    i:hover{
+        opacity: 0.7;
+    }
+    .show_text_collapse{
+        text-align: center;
+    }
+{% endblock style %}
+
 {% block content %}
     <div class="name_profile">
         <br>
@@ -8,53 +24,93 @@
     <br><br>
     <div style="text-align: center" class="retele_socializare">
         <div style="{% if object_retele_sociale.github == 'https://github.com/' %} display: none {% endif %}">
-            GITHUB: <a href="{{ object_retele_sociale.github }}">{{ object_retele_sociale.github }}</a>
+            <button type="button" class="btn btn-link"  data-placement="top" title={{ object_retele_sociale.github }} data-toggle="collapse" data-target="#Github">
+                <a href="{{ object_retele_sociale.github }}" target="_blank"> <!-- Folosesc _blank ca sa imi deschida intr-o pagina noua -->
+                    <i style="color: #333;" class="fab fa-github"></i>
+                </a>
+            </button>
             <br>
         </div>
 
         <div style="{% if object_retele_sociale.facebook == 'https://www.facebook.com/' %} display: none {% endif %}">
-            Facebook: <a href="{{ object_retele_sociale.facebook }}">{{ object_retele_sociale.facebook }}</a>
+            <button type="button" class="btn btn-link" data-placement="top" title={{ object_retele_sociale.facebook }} data-toggle="collapse" data-target="#Facebook">
+                <a href="{{ object_retele_sociale.facebook }}" target="_blank">
+                    <i style="color: #3578E5; " class="fab fa-facebook-f"></i>
+                </a>
+            </button>
             <br>
         </div>
 
         <div style="{% if object_retele_sociale.instagram == 'https://www.instagram.com/' %} display: none {% endif %}">
-            Instagram: <a href="{{ object_retele_sociale.instagram }}">{{ object_retele_sociale.instagram }}</a>
-            <br>
+            <button type="button" class="btn btn-link" data-placement="top" title={{ object_retele_sociale.instagram  }} data-toggle="collapse" data-target="#Instagram">
+                <a href="{{ object_retele_sociale.instagram }}" target="_blank">
+                    <i style="color:#c11194;" class="fab fa-instagram"></i>
+                </a>
+                <br>
+            </button>
         </div>
 
         <div style="{% if object_retele_sociale.gmail == '' %} display: none {% endif %}">
-            Gmail: <a href="mailto:{{ object_retele_sociale.gmail }}">Here</a>
-            <br>
+            <button type="button" class="btn btn-link" data-placement="top" title={{ object_retele_sociale.gmail }} data-toggle="collapse" data-target="#Gmail">
+                <a href="mailto:{{ object_retele_sociale.gmail }}">
+                    <i style="color: #ef0c0b" class="fab fa-google-plus-g"></i>
+                </a>
+                <br>
+            </button>
         </div>
 
         <div style="{% if object_retele_sociale.youtube == 'https://www.youtube.com/channel/' %} display: none {% endif %}">
-            Youtube: <a href="{{ object_retele_sociale.youtube }}">{{ object_retele_sociale.youtube }}</a>
-            <br>
+            <button type="button" class="btn btn-link" data-placement="top" title={{ object_retele_sociale.youtube }} data-toggle="collapse" data-target="#Youtube">
+                <a href="{{ object_retele_sociale.youtube }}" target="_blank">
+                    <i style="color: #FF0000" class="fab fa-youtube"></i>
+                </a>
+                <br>
+            </button>
         </div>
 
         <div style="{% if object_retele_sociale.linkedin == 'https://www.linkedin.com/in/' %} display: none {% endif %}">
-            Linkedin: <a href="{{ object_retele_sociale.linkedin }}">{{ object_retele_sociale.linkedin }}</a>
-            <br>
+            <button type="button" class="btn btn-link" data-placement="top" title={{ object_retele_sociale.linkedin }} data-toggle="collapse" data-target="#Linkedin">
+                <a href="{{ object_retele_sociale.linkedin }}" target="_blank">
+                    <i style="color: #0077B5" class="fab fa-linkedin"></i>
+                </a>
+                <br>
+            </button>
         </div>
 
         <div style="{% if object_retele_sociale.discord == '' %} display: none {% endif %}">
-            Discord: <a href="{{ object_retele_sociale.discord }}">{{ object_retele_sociale.discord }}</a>
-            <br>
+            <button type="button" class="btn btn-link" data-placement="top" title={{ object_retele_sociale.discord }} data-toggle="collapse" data-target="#Discord">
+                <a href="{{ object_retele_sociale.discord }}"> <!-- TODO: Aici trebuie collapse -->
+                    <i style="color: #7289DA" class="fab fa-discord"></i>
+                </a>
+                <br>
+            </button>
         </div>
 
         <div style="{% if object_retele_sociale.skype == '' %} display: none {% endif %}">
-            Skype: <a href="{{ object_retele_sociale.skype }}">{{ object_retele_sociale.skype }}</a>
-            <br>
+            <button type="button" class="btn btn-link" data-placement="top" title={{ object_retele_sociale.skype }} data-toggle="collapse" data-target="#Skype">
+                <a href="{{ object_retele_sociale.skype }}"> <!-- TODO: Aici trebuie collapse -->
+                    <i style="color:#00AFF0;" class="fab fa-skype"></i>
+                </a>
+                <br>
+            </button>
         </div>
 
         <div style="{% if object_retele_sociale.steam == 'https://steamcommunity.com/profiles/' %} display: none {% endif %}">
-            Steam: <a href="{{ object_retele_sociale.steam }}">{{ object_retele_sociale.steam }}</a>
-            <br>
+            <button type="button" class="btn btn-link" data-placement="top" title={{ object_retele_sociale.steam }} data-toggle="collapse" data-target="#Steam">
+                <a href="{{ object_retele_sociale.steam }}" target="_blank">
+                    <i style="color:#112758;" class="fab fa-steam"></i>
+                </a>
+                <br>
+            </button>
         </div>
 
         <div style="{% if object_retele_sociale.paypal == 'https://www.paypal.me/' %} display: none {% endif %}">
-            Paypal: <a href="{{ object_retele_sociale.paypal }}">{{ object_retele_sociale.paypal }}</a>
-            <br>
+            <button type="button" class="btn btn-link" data-placement="top" title={{ object_retele_sociale.paypal }} data-toggle="collapse" data-target="#Paypal">
+                <a href="{{ object_retele_sociale.paypal }}" target="_blank">
+                    <i style="color: #3578E5" class="fab fa-cc-paypal"></i>
+                </a>
+                <br>
+            </button>
         </div>
     </div>
 

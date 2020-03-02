@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block style %}
     .iconite_retele_socializare i{
         font-size: 50px;
@@ -17,16 +16,6 @@
 {% endblock style %}
 
 
-<!-- De eliminat -->
-<style>
-        .iconite_retele_socializare{
-        font-size: 30px;
-            margin-right: 30%;
-            margin-left: 30%;
-    }
-</style>
-<!-- Pana aici -->
-
  {% block content %}
      <br>
      {% for mesaj in messages %}
@@ -41,9 +30,13 @@
          <!-- When you are log -->
             <h1 style="float: right">Salut, {{ user.username }}</h1>
             <br><br><br>
-            <h2 style="text-align: center">Save time, and share your social profiles with one link.</h2>
+            <h2 style="text-align: center; font-family: 'Teko'; font-size: 50px">
+                <i class="fas fa-address-card" style="font-size: 50px; text-align: center;" data-placement="top" title="Your card! :)" data-toggle="collapse"></i>
+                <br><br>
+                Save   <i class="fas fa-clock" data-placement="top" title="Time" data-toggle="collapse"></i>,   and
+                <i class="fas fa-share-square" data-placement="top" title="Share" data-toggle="collapse"></i> your social profiles with one link.</h2>
             <br>
-            <h4 style="text-align: center">UPDATE your profile</h4>
+            <h4 style="text-align: center; font-family: 'Crete Round'; font-size: 30px">UPDATE your profile: (click photo):</h4>
 
 
             <div style="text-align: center" class="iconite_retele_socializare">
