@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+{% block current_page %} ERROR 404 {% endblock current_page %}
+
+{% block content %}
+
+            {% for mesaj in messages %}
+                    <br><Br>
+                  <h3 style="text-align: center"><strong style="color: red">Error! </strong> {{ mesaj }}</h3>
+         {% endfor %}
+
+    <div class="message" style="text-align: center; padding-top: 10%">
+        <h1>< Error 404 ></h1>
+        <br>
+        <h4>Acest user nu exista.<br> Click <a href="/">aici</a> pentru a ajunge la home.</h4>
+    </div>
+
+
+{% endblock content%}

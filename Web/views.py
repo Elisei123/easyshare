@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import retele_de_socializare_utilizator
+from .models import retele_de_socializare_utilizator, User
 
 
 # Create your views here.
+
+def error_404_view(request):
+    return render(request,'error_404.html')
 
 def home(request):
 
@@ -79,9 +82,14 @@ def home(request):
     return redirect('home')
 
 def name_profile_function(request, name_profile):
-    return render(
-        request, 'profile_show.html',
-        {
-            'name_profile': name_profile
-        }
-    )
+    # Search when name_profile exist in database
+    if User.objects.filter(username=name_profile).exists():
+        return render(
+            request, 'profile_show.html',
+            {
+                'name_profile': name_profile,
+            }
+        )
+
+    # else not exist
+    return redirect("error_404")
