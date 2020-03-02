@@ -1,5 +1,62 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{{ name_profile }}</h1>
+    <div class="name_profile">
+        <br>
+        <h1 style="text-align: center">Profilul lu {{ name_profile }}</h1>
+    </div>
+    <br><br>
+    <div style="text-align: center" class="retele_socializare">
+        <div style="{% if object_retele_sociale.github == 'https://github.com/' %} display: none {% endif %}">
+            GITHUB: <a href="{{ object_retele_sociale.github }}">{{ object_retele_sociale.github }}</a>
+            <br>
+        </div>
+
+        <div style="{% if object_retele_sociale.facebook == 'https://www.facebook.com/' %} display: none {% endif %}">
+            Facebook: <a href="{{ object_retele_sociale.facebook }}">{{ object_retele_sociale.facebook }}</a>
+            <br>
+        </div>
+
+        <div style="{% if object_retele_sociale.instagram == 'https://www.instagram.com/' %} display: none {% endif %}">
+            Instagram: <a href="{{ object_retele_sociale.instagram }}">{{ object_retele_sociale.instagram }}</a>
+            <br>
+        </div>
+
+        <div style="{% if object_retele_sociale.gmail == '' %} display: none {% endif %}">
+            Gmail: <a href="mailto:{{ object_retele_sociale.gmail }}">Here</a>
+            <br>
+        </div>
+
+        <div style="{% if object_retele_sociale.youtube == 'https://www.youtube.com/channel/' %} display: none {% endif %}">
+            Youtube: <a href="{{ object_retele_sociale.youtube }}">{{ object_retele_sociale.youtube }}</a>
+            <br>
+        </div>
+
+        <div style="{% if object_retele_sociale.linkedin == 'https://www.linkedin.com/in/' %} display: none {% endif %}">
+            Linkedin: <a href="{{ object_retele_sociale.linkedin }}">{{ object_retele_sociale.linkedin }}</a>
+            <br>
+        </div>
+
+        <div style="{% if object_retele_sociale.discord == '' %} display: none {% endif %}">
+            Discord: <a href="{{ object_retele_sociale.discord }}">{{ object_retele_sociale.discord }}</a>
+            <br>
+        </div>
+
+        <div style="{% if object_retele_sociale.skype == '' %} display: none {% endif %}">
+            Skype: <a href="{{ object_retele_sociale.skype }}">{{ object_retele_sociale.skype }}</a>
+            <br>
+        </div>
+
+        <div style="{% if object_retele_sociale.steam == 'https://steamcommunity.com/profiles/' %} display: none {% endif %}">
+            Steam: <a href="{{ object_retele_sociale.steam }}">{{ object_retele_sociale.steam }}</a>
+            <br>
+        </div>
+
+        <div style="{% if object_retele_sociale.paypal == 'https://www.paypal.me/' %} display: none {% endif %}">
+            Paypal: <a href="{{ object_retele_sociale.paypal }}">{{ object_retele_sociale.paypal }}</a>
+            <br>
+        </div>
+    </div>
+
+
 {% endblock content %}

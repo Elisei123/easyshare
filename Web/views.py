@@ -26,7 +26,7 @@ def home(request):
                 discord="",
                 skype="",
                 steam="https://steamcommunity.com/profiles/",
-                paypal="paypal.me/",
+                paypal="https://www.paypal.me/",
             )
             retele_de_socializare_utilizator_object.save()
 
@@ -84,10 +84,14 @@ def home(request):
 def name_profile_function(request, name_profile):
     # Search when name_profile exist in database
     if User.objects.filter(username=name_profile).exists():
+        user_obj=User.objects.filter(username=name_profile).first()
+        object_retele_sociale = retele_de_socializare_utilizator.objects.get(user=user_obj)
+
         return render(
             request, 'profile_show.html',
             {
                 'name_profile': name_profile,
+                'object_retele_sociale':object_retele_sociale,
             }
         )
 
