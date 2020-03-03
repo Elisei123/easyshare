@@ -228,7 +228,7 @@
                     <h3>Your share link: </h3>
 
                     <input style="width: 40%;" type="text" value="https://easyshare.mailo.cloud/profile/{{ user }}" id="myInput">
-                    <button onclick="myFunction()">Copy link</button>
+                    <button onclick="myFunction()">Copy link</button><span id="copy_link"></span>
                 </form>
             </div>
 
@@ -238,6 +238,8 @@
          <h2 style="text-align: center">Save   <i class="fas fa-clock" data-placement="top" title="Time" data-toggle="collapse"></i>,   and
                 <i class="fas fa-share-square" data-placement="top" title="Share" data-toggle="collapse"></i> your social profiles with one link.</h2></h2><br>
          <h4 style="text-align: center">Press <a href="accounts/login">here</a> to login, or <a href="accounts/register">here</a> for registration.</h4>
+
+         
      {% endif %}
 
      <script>
@@ -245,7 +247,7 @@
     var copyText = document.getElementById("myInput");
     copyText.select();
     document.execCommand("Copy");
-    alert("Copied the text: " + copyText.value);
+    alert("Link-ul a fost copiat.")
   }
 </script>
 
