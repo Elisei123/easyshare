@@ -5,7 +5,7 @@ from .models import retele_de_socializare_utilizator, User
 
 # Create your views here.
 
-def error_404_view(request):
+def error_404_view(request, exception):
     return render(request,'error_404.html')
 
 def home(request):

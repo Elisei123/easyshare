@@ -29,207 +29,211 @@
      {% if user.is_authenticated %}
          <!-- When you are log -->
             <h1 style="float: right">Salut, {{ user }}</h1>
-            <br><br><br>
-            <h2 style="text-align: center; font-family: 'Teko'; font-size: 50px">
-                <i class="fas fa-address-card" style="font-size: 50px; text-align: center;" data-placement="top" title="Your card! :)" data-toggle="collapse"></i>
-                <br><br>
-                Save   <i class="fas fa-clock" data-placement="top" title="Time" data-toggle="collapse"></i>,   and
-                <i class="fas fa-share-square" data-placement="top" title="Share" data-toggle="collapse"></i> your social profiles with one link.</h2>
-            <br>
-            <h4 style="text-align: center; font-family: 'Crete Round'; font-size: 30px">UPDATE your profile: (click photo):</h4>
+            <div style="margin-top: 15%;" class="row">
+                <div style="background-color: black; border-radius: 5%; padding: 5%;" class="col-sm">
+                    <h2 style="text-align: center; font-family: 'Teko'; font-size: 50px; color: white">
+                        <i class="fas fa-address-card" style="font-size: 50px; text-align: center;" data-placement="top" title="Your card! :)" data-toggle="collapse"></i>
+                        <br><br>
+                        Save   <i style="padding: 10px;" class="fas fa-clock" data-placement="top" title="Time" data-toggle="collapse"></i>,   and
+                        <i style="padding: 10px;" class="fas fa-share-square" data-placement="top" title="Share" data-toggle="collapse"></i> your social profiles with one link.
+                    </h2>
+                </div>
+                <div style="background-color: white; border-radius: 5%;padding: 5%;" class="col-sm">
+                    <br>
+                    <h4 style="text-align: center; font-family: 'Crete Round'; font-size: 30px">UPDATE your profile: (click photo):</h4>
+                    <div style="text-align: center" class="iconite_retele_socializare">
+                                                <!-- Github -->
+                        <button type="button" class="btn btn-link"  data-placement="top" title="Github" data-toggle="collapse" data-target="#Github">
+                            <i style="color: #333" class="fab fa-github"></i>
+                        </button>
 
+                                    <!-- Facebook -->
+                        <button type="button" class="btn btn-link" data-placement="top" title="Facebook" data-toggle="collapse" data-target="#Facebook">
+                            <i style="color: #3578E5" class="fab fa-facebook-f"></i>
+                        </button>
 
-            <div style="text-align: center" class="iconite_retele_socializare">
-                                        <!-- Github -->
-                <button type="button" class="btn btn-link"  data-placement="top" title="Github" data-toggle="collapse" data-target="#Github">
-                    <i style="color: #333" class="fab fa-github"></i>
-                </button>
+                                    <!-- Instagram -->
+                        <button type="button" class="btn btn-link" data-placement="top" title="Instagram" data-toggle="collapse" data-target="#Instagram">
+                            <i style="color:#c11194;" class="fab fa-instagram"></i>
+                        </button>
 
-                            <!-- Facebook -->
-                <button type="button" class="btn btn-link" data-placement="top" title="Facebook" data-toggle="collapse" data-target="#Facebook">
-                    <i style="color: #3578E5" class="fab fa-facebook-f"></i>
-                </button>
+                                    <!-- Gmail -->
+                        <button type="button" class="btn btn-link" data-placement="top" title="Gmail" data-toggle="collapse" data-target="#Gmail">
+                            <i style="color: #ef0c0b" class="fab fa-google-plus-g"></i>
+                        </button>
 
-                            <!-- Instagram -->
-                <button type="button" class="btn btn-link" data-placement="top" title="Instagram" data-toggle="collapse" data-target="#Instagram">
-                    <i style="color:#c11194;" class="fab fa-instagram"></i>
-                </button>
+                                    <!-- Youtube -->
+                        <button type="button" class="btn btn-link" data-placement="top" title="Youtube" data-toggle="collapse" data-target="#Youtube">
+                            <i style="color: #FF0000" class="fab fa-youtube"></i>
+                        </button>
 
-                            <!-- Gmail -->
-                <button type="button" class="btn btn-link" data-placement="top" title="Gmail" data-toggle="collapse" data-target="#Gmail">
-                    <i style="color: #ef0c0b" class="fab fa-google-plus-g"></i>
-                </button>
+                                    <!-- Linkedin -->
+                        <button type="button" class="btn btn-link" data-placement="top" title="Linkedin" data-toggle="collapse" data-target="#Linkedin">
+                            <i style="color: #0077B5" class="fab fa-linkedin"></i>
+                        </button>
 
-                            <!-- Youtube -->
-                <button type="button" class="btn btn-link" data-placement="top" title="Youtube" data-toggle="collapse" data-target="#Youtube">
-                    <i style="color: #FF0000" class="fab fa-youtube"></i>
-                </button>
+                                    <!-- Discord -->
+                        <button type="button" class="btn btn-link" data-placement="top" title="Discord" data-toggle="collapse" data-target="#Discord">
+                            <i style="color: #7289DA" class="fab fa-discord"></i>
+                        </button>
 
-                            <!-- Linkedin -->
-                <button type="button" class="btn btn-link" data-placement="top" title="Linkedin" data-toggle="collapse" data-target="#Linkedin">
-                    <i style="color: #0077B5" class="fab fa-linkedin"></i>
-                </button>
+                                    <!-- Skype -->
+                        <button type="button" class="btn btn-link" data-placement="top" title="Skype" data-toggle="collapse" data-target="#Skype">
+                            <i style="color:#00AFF0;" class="fab fa-skype"></i>
+                        </button>
 
-                            <!-- Discord -->
-                <button type="button" class="btn btn-link" data-placement="top" title="Discord" data-toggle="collapse" data-target="#Discord">
-                    <i style="color: #7289DA" class="fab fa-discord"></i>
-                </button>
+                                    <!-- Steam -->
+                        <button type="button" class="btn btn-link" data-placement="top" title="Steam" data-toggle="collapse" data-target="#Steam">
+                            <i style="color:#112758;" class="fab fa-steam"></i>
+                        </button>
 
-                            <!-- Skype -->
-                <button type="button" class="btn btn-link" data-placement="top" title="Skype" data-toggle="collapse" data-target="#Skype">
-                    <i style="color:#00AFF0;" class="fab fa-skype"></i>
-                </button>
-
-                            <!-- Steam -->
-                <button type="button" class="btn btn-link" data-placement="top" title="Steam" data-toggle="collapse" data-target="#Steam">
-                    <i style="color:#112758;" class="fab fa-steam"></i>
-                </button>
-
-                                        <!-- Paypal -->
-                <button type="button" class="btn btn-link" data-placement="top" title="Paypal" data-toggle="collapse" data-target="#Paypal">
-                    <i style="color: #3578E5" class="fab fa-cc-paypal"></i>
-                </button>
-            </div>
-            <div class="show_text_collapse">
-                <form action="" method="POST">
-                    {% csrf_token %}
-                    <div id="Github" class="collapse">
-                        <div class="col-auto">
-                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text"> <i style="color: #333; margin-right: 5px;" class="fab fa-github"></i> Github profile link:</div>
+                                                <!-- Paypal -->
+                        <button type="button" class="btn btn-link" data-placement="top" title="Paypal" data-toggle="collapse" data-target="#Paypal">
+                            <i style="color: #3578E5" class="fab fa-cc-paypal"></i>
+                        </button>
+                    </div>
+                    <div class="show_text_collapse">
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <div id="Github" class="collapse">
+                                <div class="col-auto">
+                                  <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                  <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text"> <i style="color: #333; margin-right: 5px;" class="fab fa-github"></i> Github profile link:</div>
+                                    </div>
+                                    <input type="text" class="form-control" name="Github_input" value="{{ inputs_retele_socializare.github }}" placeholder="Link from Github!">
+                                  </div>
+                                </div>
                             </div>
-                            <input type="text" class="form-control" name="Github_input" value="{{ inputs_retele_socializare.github }}" placeholder="Link from Github!">
-                          </div>
-                        </div>
-                    </div>
 
-                    <div id="Facebook" class="collapse">
-                        {% csrf_token %}
-                        <div class="col-auto">
-                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text"><i style="color: #3578E5; margin-right: 5px;" class="fab fa-facebook-f"></i> Facebook profile link </div>
+                            <div id="Facebook" class="collapse">
+                                {% csrf_token %}
+                                <div class="col-auto">
+                                  <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                  <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text"><i style="color: #3578E5; margin-right: 5px;" class="fab fa-facebook-f"></i> Facebook profile link </div>
+                                    </div>
+                                    <input type="text" class="form-control" name="Facebook_input" value="{{ inputs_retele_socializare.facebook }}" placeholder="Link from Facebook!">
+                                  </div>
+                                </div>
                             </div>
-                            <input type="text" class="form-control" name="Facebook_input" value="{{ inputs_retele_socializare.facebook }}" placeholder="Link from Facebook!">
-                          </div>
-                        </div>
-                    </div>
 
-                    <div id="Instagram" class="collapse">
-                        {% csrf_token %}
-                        <div class="col-auto">
-                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text"><i style="color:#c11194; margin-right: 5px;" class="fab fa-instagram"></i> Instagram profile link: </div>
+                            <div id="Instagram" class="collapse">
+                                {% csrf_token %}
+                                <div class="col-auto">
+                                  <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                  <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text"><i style="color:#c11194; margin-right: 5px;" class="fab fa-instagram"></i> Instagram profile link: </div>
+                                    </div>
+                                    <input type="text" class="form-control" name="Instagram_input" value="{{ inputs_retele_socializare.instagram }}" placeholder="Link from Instagram!">
+                                  </div>
+                                </div>
                             </div>
-                            <input type="text" class="form-control" name="Instagram_input" value="{{ inputs_retele_socializare.instagram }}" placeholder="Link from Instagram!">
-                          </div>
-                        </div>
-                    </div>
 
-                    <div id="Gmail" class="collapse">
-                        {% csrf_token %}
-                        <div class="col-auto">
-                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text"> <i style="color: #ef0c0b; margin-right: 5px;" class="fab fa-google-plus-g"></i> Your Gmail address: </div>
+                            <div id="Gmail" class="collapse">
+                                {% csrf_token %}
+                                <div class="col-auto">
+                                  <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                  <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text"> <i style="color: #ef0c0b; margin-right: 5px;" class="fab fa-google-plus-g"></i> Your Gmail address: </div>
+                                    </div>
+                                    <input type="text" class="form-control" name="Gmail_input" value="{{ inputs_retele_socializare.gmail }}" placeholder="ex: nicolae.elisei1999@gmail.com">
+                                  </div>
+                                </div>
                             </div>
-                            <input type="text" class="form-control" name="Gmail_input" value="{{ inputs_retele_socializare.gmail }}" placeholder="ex: nicolae.elisei1999@gmail.com">
-                          </div>
-                        </div>
-                    </div>
 
-                    <div id="Youtube" class="collapse">
-                        {% csrf_token %}
-                        <div class="col-auto">
-                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text"><i style="color: #FF0000; margin-right: 5px;" class="fab fa-youtube"></i>Youtube profile link: </div>
+                            <div id="Youtube" class="collapse">
+                                {% csrf_token %}
+                                <div class="col-auto">
+                                  <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                  <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text"><i style="color: #FF0000; margin-right: 5px;" class="fab fa-youtube"></i>Youtube profile link: </div>
+                                    </div>
+                                    <input type="text" class="form-control" name="Youtube_input" value="{{ inputs_retele_socializare.youtube }}" placeholder="Link from Youtube!">
+                                  </div>
+                                </div>
                             </div>
-                            <input type="text" class="form-control" name="Youtube_input" value="{{ inputs_retele_socializare.youtube }}" placeholder="Link from Youtube!">
-                          </div>
-                        </div>
-                    </div>
 
-                    <div id="Linkedin" class="collapse">
-                        {% csrf_token %}
-                        <div class="col-auto">
-                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text"><i style="color: #0077B5; margin-right: 5px;" class="fab fa-linkedin"></i> Linkedin profile link: </div>
+                            <div id="Linkedin" class="collapse">
+                                {% csrf_token %}
+                                <div class="col-auto">
+                                  <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                  <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text"><i style="color: #0077B5; margin-right: 5px;" class="fab fa-linkedin"></i> Linkedin profile link: </div>
+                                    </div>
+                                    <input type="text" class="form-control" name="Linkedin_input" value="{{ inputs_retele_socializare.linkedin }}" placeholder="Link from Linkedin!">
+                                  </div>
+                                </div>
                             </div>
-                            <input type="text" class="form-control" name="Linkedin_input" value="{{ inputs_retele_socializare.linkedin }}" placeholder="Link from Linkedin!">
-                          </div>
-                        </div>
-                    </div>
 
-                    <div id="Discord" class="collapse">
-                        {% csrf_token %}
-                        <div class="col-auto">
-                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text"><i style="color: #7289DA; margin-right: 5px;" class="fab fa-discord"></i> Discord name and id: </div>
+                            <div id="Discord" class="collapse">
+                                {% csrf_token %}
+                                <div class="col-auto">
+                                  <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                  <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text"><i style="color: #7289DA; margin-right: 5px;" class="fab fa-discord"></i> Discord name and id: </div>
+                                    </div>
+                                    <input type="text" class="form-control" name="Discord_input" value="{{ inputs_retele_socializare.discord }}"  placeholder="ex: Username#0000">
+                                  </div>
+                                </div>
                             </div>
-                            <input type="text" class="form-control" name="Discord_input" value="{{ inputs_retele_socializare.discord }}"  placeholder="ex: Username#0000">
-                          </div>
-                        </div>
-                    </div>
 
-                    <div id="Skype" class="collapse">
-                        {% csrf_token %}
-                        <div class="col-auto">
-                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text"><i style="color:#00AFF0; margin-right: 5px;" class="fab fa-skype"></i> Your skype name: </div>
+                            <div id="Skype" class="collapse">
+                                {% csrf_token %}
+                                <div class="col-auto">
+                                  <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                  <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text"><i style="color:#00AFF0; margin-right: 5px;" class="fab fa-skype"></i> Your skype name: </div>
+                                    </div>
+                                    <input type="text" class="form-control" name="Skype_input" value="{{ inputs_retele_socializare.skype }}" placeholder="ex: test123">
+                                  </div>
+                                </div>
                             </div>
-                            <input type="text" class="form-control" name="Skype_input" value="{{ inputs_retele_socializare.skype }}" placeholder="ex: test123">
-                          </div>
-                        </div>
-                    </div>
 
-                    <div id="Steam" class="collapse">
-                        {% csrf_token %}
-                        <div class="col-auto">
-                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text"><i style="color:#112758; margin-right: 5px;" class="fab fa-steam"></i>Steam profile link: </div>
+                            <div id="Steam" class="collapse">
+                                {% csrf_token %}
+                                <div class="col-auto">
+                                  <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                  <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text"><i style="color:#112758; margin-right: 5px;" class="fab fa-steam"></i>Steam profile link: </div>
+                                    </div>
+                                    <input type="text" class="form-control" name="Steam_input" value="{{ inputs_retele_socializare.steam }}" placeholder="ex: https://steamcommunity.com/profiles/76561198333572394/">
+                                  </div>
+                                </div>
                             </div>
-                            <input type="text" class="form-control" name="Steam_input" value="{{ inputs_retele_socializare.steam }}" placeholder="ex: https://steamcommunity.com/profiles/76561198333572394/">
-                          </div>
-                        </div>
-                    </div>
 
-                    <div id="Paypal" class="collapse">
-                        {% csrf_token %}
-                        <div class="col-auto">
-                          <label class="sr-only" for="inlineFormInputGroup">Username</label>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text"><i style="color: #3578E5; margin-right: 5px;" class="fab fa-cc-paypal"></i>Your Paypal link: </div>
+                            <div id="Paypal" class="collapse">
+                                {% csrf_token %}
+                                <div class="col-auto">
+                                  <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                  <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                      <div class="input-group-text"><i style="color: #3578E5; margin-right: 5px;" class="fab fa-cc-paypal"></i>Your Paypal link: </div>
+                                    </div>
+                                    <input type="text" class="form-control" name="Paypal_input" value="{{ inputs_retele_socializare.paypal }}" placeholder="ex: https://www.paypal.me/EliseiNicolae">
+                                  </div>
+                                </div>
                             </div>
-                            <input type="text" class="form-control" name="Paypal_input" value="{{ inputs_retele_socializare.paypal }}" placeholder="ex: https://www.paypal.me/EliseiNicolae">
-                          </div>
-                        </div>
-                    </div>
-                    <div style="text-align: center">
-                        <input style="font-size:20px;" id="submit" type="Submit" name="submit" value="UPDATE"/>
-                    </div>
-                    <br><br><br>
-                    <h3>Your share link: </h3>
+                            <div style="text-align: center">
+                                <input style="font-size:20px;" id="submit" type="Submit" name="submit" value="UPDATE"/>
+                            </div>
+                            <br><br><br>
+                            <h3>Your share link: </h3>
 
-                    <input style="width: 40%;" type="text" value="https://easyshare.mailo.cloud/profile/{{ user }}" id="myInput">
-                    <button onclick="myFunction()">Copy link</button><span id="copy_link"></span>
-                </form>
+                            <input style="width: 100%; text-align: center;" type="text" value="https://easyshare.mailo.cloud/profile/{{ user }}" id="myInput">
+                            <button onclick="myFunction()">Copy link</button><span id="copy_link"></span>
+                        </form>
+                    </div>
+                </div>
             </div>
 
      {% else %}
@@ -239,7 +243,7 @@
                 <i class="fas fa-share-square" data-placement="top" title="Share" data-toggle="collapse"></i> your social profiles with one link.</h2></h2><br>
          <h4 style="text-align: center">Press <a href="accounts/login">here</a> to login, or <a href="accounts/register">here</a> for registration.</h4>
 
-         
+
      {% endif %}
 
      <script>
