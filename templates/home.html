@@ -4,6 +4,7 @@
         font-size: 50px;
         text-align: center;
         padding: 2px;
+
         <!-- TODO: Pentru a o centra foloseste ceva animatie-->
     }
 
@@ -13,8 +14,42 @@
     .show_text_collapse{
         text-align: center;
     }
-{% endblock style %}
 
+    .input-group-text i{
+        font-size:1.3rem;
+    }
+
+    .card_black, .card_white{
+        border-radius: 5%;
+    }
+
+    .card_black{
+        border-top-right-radius: 1%;
+        border-bottom-right-radius: 1%;
+    }
+
+    .card_white{
+        border-top-left-radius: 1%;
+        border-bottom-left-radius: 1%;
+    }
+
+    @media only screen and (max-width: 768px) {
+  /* For phone: */
+        .card_black{
+            border-top-right-radius: 3%;
+            border-top-left-radius: 3%;
+            border-bottom-left-radius: 0%;
+            border-bottom-right-radius: 0%;
+        }
+
+        .card_white{
+            border-top-right-radius: 0%;
+            border-bottom-right-radius: 0%;
+        }
+    }
+
+
+{% endblock style %}
 
  {% block content %}
      <br>
@@ -29,8 +64,9 @@
      {% if user.is_authenticated %}
          <!-- When you are log -->
             <h1 style="float: right">Salut, {{ user }}</h1>
-            <div style="margin-top: 15%;" class="row">
-                <div style="background-color: black; border-radius: 5%; padding: 5%;" class="col-sm">
+            <div style="margin-top: 15%; " class="row">
+                <div style="background-color: black; padding: 5%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.69);
+}" class="card_black col-sm" >
                     <h2 style="text-align: center; font-family: 'Teko'; font-size: 50px; color: white">
                         <i class="fas fa-address-card" style="font-size: 50px; text-align: center;" data-placement="top" title="Your card! :)" data-toggle="collapse"></i>
                         <br><br>
@@ -38,7 +74,8 @@
                         <i style="padding: 10px;" class="fas fa-share-square" data-placement="top" title="Share" data-toggle="collapse"></i> your social profiles with one link.
                     </h2>
                 </div>
-                <div style="background-color: white; border-radius: 5%;padding: 5%;" class="col-sm">
+                <div style="background-color: white; padding: 5%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.69);
+}" class="card_white col-sm">
                     <br>
                     <h4 style="text-align: center; font-family: 'Crete Round'; font-size: 30px">UPDATE your profile: (click photo):</h4>
                     <div style="text-align: center" class="iconite_retele_socializare">
@@ -100,7 +137,7 @@
                                   <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                   <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                      <div class="input-group-text"> <i style="color: #333; margin-right: 5px;" class="fab fa-github"></i> Github profile link:</div>
+                                        <div class="input-group-text"> <a href="https://github.com/" target="_blank"><i style="color: #333; margin-right: 5px;" class="fab fa-github"></i></a></div>
                                     </div>
                                     <input type="text" class="form-control" name="Github_input" value="{{ inputs_retele_socializare.github }}" placeholder="Link from Github!">
                                   </div>
@@ -113,7 +150,7 @@
                                   <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                   <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                      <div class="input-group-text"><i style="color: #3578E5; margin-right: 5px;" class="fab fa-facebook-f"></i> Facebook profile link </div>
+                                        <div class="input-group-text"> <a href="https://www.facebook.com/" target="_blank"><i style="color: #3578E5; margin-right: 5px;" class="fab fa-facebook-f"></i></a> </div>
                                     </div>
                                     <input type="text" class="form-control" name="Facebook_input" value="{{ inputs_retele_socializare.facebook }}" placeholder="Link from Facebook!">
                                   </div>
@@ -126,7 +163,11 @@
                                   <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                   <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                      <div class="input-group-text"><i style="color:#c11194; margin-right: 5px;" class="fab fa-instagram"></i> Instagram profile link: </div>
+                                      <div class="input-group-text">
+                                          <a href="https://www.instagram.com/" target="_blank">
+                                              <i style="color:#c11194; margin-right: 5px;" class="fab fa-instagram"></i>
+                                          </a>
+                                      </div>
                                     </div>
                                     <input type="text" class="form-control" name="Instagram_input" value="{{ inputs_retele_socializare.instagram }}" placeholder="Link from Instagram!">
                                   </div>
@@ -139,7 +180,11 @@
                                   <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                   <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                      <div class="input-group-text"> <i style="color: #ef0c0b; margin-right: 5px;" class="fab fa-google-plus-g"></i> Your Gmail address: </div>
+                                      <div class="input-group-text">
+                                          <a href="https://mail.google.com/" target="_blank">
+                                            <i style="color: #ef0c0b; margin-right: 5px;" class="fab fa-google-plus-g"></i>
+                                          </a>
+                                      </div>
                                     </div>
                                     <input type="text" class="form-control" name="Gmail_input" value="{{ inputs_retele_socializare.gmail }}" placeholder="ex: nicolae.elisei1999@gmail.com">
                                   </div>
@@ -152,7 +197,11 @@
                                   <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                   <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                      <div class="input-group-text"><i style="color: #FF0000; margin-right: 5px;" class="fab fa-youtube"></i>Youtube profile link: </div>
+                                      <div class="input-group-text">
+                                          <a href="https://www.youtube.com/" target="_blank">
+                                              <i style="color: #FF0000; margin-right: 5px;" class="fab fa-youtube"></i>
+                                          </a>
+                                      </div>
                                     </div>
                                     <input type="text" class="form-control" name="Youtube_input" value="{{ inputs_retele_socializare.youtube }}" placeholder="Link from Youtube!">
                                   </div>
@@ -165,7 +214,11 @@
                                   <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                   <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                      <div class="input-group-text"><i style="color: #0077B5; margin-right: 5px;" class="fab fa-linkedin"></i> Linkedin profile link: </div>
+                                      <div class="input-group-text">
+                                          <a href="https://www.linkedin.com/in/" target="_blank">
+                                              <i style="color: #0077B5; margin-right: 5px;" class="fab fa-linkedin"></i>
+                                          </a>
+                                      </div>
                                     </div>
                                     <input type="text" class="form-control" name="Linkedin_input" value="{{ inputs_retele_socializare.linkedin }}" placeholder="Link from Linkedin!">
                                   </div>
@@ -178,7 +231,11 @@
                                   <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                   <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                      <div class="input-group-text"><i style="color: #7289DA; margin-right: 5px;" class="fab fa-discord"></i> Discord name and id: </div>
+                                      <div class="input-group-text">
+                                          <a href="https://discordapp.com/" target="_blank">
+                                              <i style="color: #7289DA; margin-right: 5px;" class="fab fa-discord"></i>
+                                          </a>
+                                      </div>
                                     </div>
                                     <input type="text" class="form-control" name="Discord_input" value="{{ inputs_retele_socializare.discord }}"  placeholder="ex: Username#0000">
                                   </div>
@@ -191,7 +248,11 @@
                                   <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                   <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                      <div class="input-group-text"><i style="color:#00AFF0; margin-right: 5px;" class="fab fa-skype"></i> Your skype name: </div>
+                                        <div class="input-group-text">
+                                            <a href="https://www.skype.com/" target="_blank">
+                                                <i style="color:#00AFF0; margin-right: 5px;" class="fab fa-skype"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                     <input type="text" class="form-control" name="Skype_input" value="{{ inputs_retele_socializare.skype }}" placeholder="ex: test123">
                                   </div>
@@ -204,7 +265,11 @@
                                   <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                   <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                      <div class="input-group-text"><i style="color:#112758; margin-right: 5px;" class="fab fa-steam"></i>Steam profile link: </div>
+                                        <div class="input-group-text">
+                                            <a href="https://store.steampowered.com/" target="_blank">
+                                                <i style="color:#112758; margin-right: 5px;" class="fab fa-steam"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                     <input type="text" class="form-control" name="Steam_input" value="{{ inputs_retele_socializare.steam }}" placeholder="ex: https://steamcommunity.com/profiles/76561198333572394/">
                                   </div>
@@ -217,7 +282,11 @@
                                   <label class="sr-only" for="inlineFormInputGroup">Username</label>
                                   <div class="input-group mb-2">
                                     <div class="input-group-prepend">
-                                      <div class="input-group-text"><i style="color: #3578E5; margin-right: 5px;" class="fab fa-cc-paypal"></i>Your Paypal link: </div>
+                                        <div class="input-group-text">
+                                            <a href="https://www.paypal.me/" target="_blank">
+                                                <i style="color: #3578E5; margin-right: 5px;" class="fab fa-cc-paypal"></i>
+                                            </a>
+                                        </div>
                                     </div>
                                     <input type="text" class="form-control" name="Paypal_input" value="{{ inputs_retele_socializare.paypal }}" placeholder="ex: https://www.paypal.me/EliseiNicolae">
                                   </div>
