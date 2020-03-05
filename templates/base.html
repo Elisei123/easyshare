@@ -11,7 +11,7 @@
       <script src='https://kit.fontawesome.com/a076d05399.js'></script>
       <link href="https://fonts.googleapis.com/css?family=Teko:400,700&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Crete+Round&display=swap" rel="stylesheet">
-    <title>Hello, world!</title>
+    <title>{% block title %}Easy Share - Home {% endblock title %}</title>
   </head>
 
 
@@ -85,7 +85,7 @@
           <div  class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a class="navbar-brand"> Easy Share</a>
 
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <ul style="text-align: center;" class="navbar-nav mr-auto mt-2 mt-lg-0">
 
                 <!-- Here -->
 
@@ -102,7 +102,7 @@
 
 
                       <li class="list-navbar" style="{% if request.resolver_match.url_name == "settings" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
-                        <a class="nav-link" style="color: red" href="/accounts/settings">Setari</a>
+                        <a class="nav-link" style="color: red" href="/accounts/settings">Settings</a>
                       </li>
 
                       <li class="list-navbar" >
