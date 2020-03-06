@@ -294,14 +294,17 @@
                                   </div>
                                 </div>
                             </div>
-                            <div style="text-align: center">
-                                <input style="font-size:20px;" id="submit" type="Submit" name="submit" value="UPDATE"/>
+                            <div class="button-update" style="text-align: center">
+                                <br>
+                                <button type="Submit" name="submit" class="btn btn-success">UPDATE</button>
                             </div>
-                            <br><br><br>
-                            <h3>Your share link: </h3>
+                            <br>
+                            <h3 style="font-family: 'Teko'; font-size: 50px;">Your share link: </h3>
 
-                            <input style="width: 100%; text-align: center;" type="text" value="https://easyshare.mailo.cloud/profile/{{ user }}" id="myInput">
-                            <button onclick="myFunction()">Copy link</button><span id="copy_link"></span>
+                            <span style="width: 100%" class="btn btn-outline-dark">
+                                <input class="rounded" style="width: 100%; text-align: center; color: black; border: none" disabled="disabled"   type="text" value="https://easyshare.mailo.cloud/profile/{{ user }}" id="myInput">
+                            </span><br>
+                                <button style="margin-top: 5px;" type="button" class="btn btn-dark" onclick="myFunction()">Copy link</button><span id="copy_link"></span>
                         </form>
                     </div>
                 </div>

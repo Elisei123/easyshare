@@ -145,6 +145,10 @@
                             </a>
                         </button>
                     </div>
+
+                    <!-- TODO: De adaugat button "copy" la 'DISCORD' si "SKYPE' -->
+
+
                     <!-- Collapse Discord -->
                     <div id="Discord" class="collapse">
                         <div class="col-auto">
@@ -152,12 +156,12 @@
                           <div class="input-group mb-2">
                             <div class="input-group-prepend">
                               <div class="input-group-text">
-                                  <a href="https://discordapp.com/" target="_blank">
-                                      <i style="color: #7289DA; margin-right: 5px; font-size: 21px;" class="fab fa-discord"></i>
+                                  <a>
+                                      <i style="color: #7289DA; margin-right: 5px; font-size: 20px;" class="fab fa-discord"></i>
                                   </a>
                               </div>
                             </div>
-                            <input type="text" class="form-control" name="Discord_input" value="{{ object_retele_sociale.discord }}"  placeholder="ex: Username#0000">
+                            <input type="text" class="form-control" name="Discord_input" disabled="disabled" value="{{ object_retele_sociale.discord }}"  placeholder="ex: Username#0000">
                           </div>
                         </div>
                     </div>
@@ -173,7 +177,7 @@
                                                 <i style="color:#00AFF0;font-size: 21px;" class="fab fa-skype"></i>
                                         </div>
                                     </div>
-                                    <input type="text" class="form-control" name="Skype_input" value="{{ object_retele_sociale.skype }}">
+                                    <input disabled="disabled" type="text" class="form-control" name="Skype_input" value="{{ object_retele_sociale.skype }}">
                                   </div>
                                 </div>
                               </div>
