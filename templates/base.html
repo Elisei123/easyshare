@@ -17,16 +17,10 @@
 
     <style>
 
-    {% block style %}
-        /* Pentru a putea pune mai multe style-uri din pagina care contine extends */
-    {% endblock style %}
-
 
     .navbar-expand-lg .navbar-nav .nav-link {
-        font-size: 20px;
-    }
-
-    .list-navbar {
+        font-size: 22px;
+        color: white;
         margin: 5px;
     }
 
@@ -65,11 +59,22 @@
         }
     }
 
-
+    nav{
+        border-bottom-left-radius: 5%;
+        border-bottom-right-radius: 5%;
+    }
 
       body{
-          background-color: bisque;
+         /* v1: Blue   background: linear-gradient(to bottom, #99ccff -25%, #ffffff 500%) no-repeat center center fixed; */
+           background: linear-gradient(to left, #3399ff -44%, #ffffcc 150%) no-repeat center center fixed;;
       }
+
+    {% block style %}
+        /* !important block style trebuie pus de fiecare data jos, pt ca daca este sus, nu apar unele modificari in celelalte pagini! */
+        /* Pentru a putea pune mai multe style-uri din pagina care contine extends */
+    {% endblock style %}
+
+
   </style>
 
   <body>
@@ -78,7 +83,7 @@
 
 
 
-         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
