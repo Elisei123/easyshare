@@ -26,13 +26,18 @@
          font-family: 'Teko';
     }
 
+    .navbar-expand-lg .navbar-nav .nav-link:hover{
+        color: black;
+    }
+
     .list-navbar{
         font-weight: bold;
-                margin-right: 20px;
-                margin-left: 20px;
+        margin-right: 20px;
+        margin-left: 20px;
     }
 
     .list-navbar:hover, #button-drop-gallery:hover{
+        color: black;
         border-radius: 10px;
         background: linear-gradient(to left, #3399ff -44%, #ffffcc 150%) no-repeat center center fixed;
     }
@@ -76,7 +81,6 @@
          /* v1: Blue   background: linear-gradient(to bottom, #99ccff -25%, #ffffff 500%) no-repeat center center fixed; */
            background: linear-gradient(to left, #3399ff -44%, #ffffcc 150%) no-repeat center center fixed;
       }
-
     {% block style %}
         /* !important block style trebuie pus de fiecare data jos, pt ca daca este sus, nu apar unele modificari in celelalte pagini! */
         /* Pentru a putea pune mai multe style-uri din pagina care contine extends */
@@ -91,7 +95,7 @@
 
 
 
-         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+         <nav style="background-color: black" class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -129,12 +133,12 @@
                              <a class="nav-link" href="/">Home</a>
                           </li>
                           <li class="list-navbar" style="{% if request.resolver_match.url_name == "register" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
-                          <a class="nav-link" href="/accounts/register">Register</a>
-                         </li>
+                            <a class="nav-link" href="/accounts/register">Register</a>
+                          </li>
 
                           <li class="list-navbar" style="{% if request.resolver_match.url_name == "login" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
-                          <a class="nav-link" href="/accounts/login">Login</a>
-                        </li>
+                            <a class="nav-link" href="/accounts/login">Login</a>
+                          </li>
 
                       {% endif %}
 
