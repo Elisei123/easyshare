@@ -96,4 +96,4 @@ def name_profile_function(request, name_profile):
         )
 
     # else not exist
-    return redirect("error_404")
+    return render(request, 'error_404.html')
