@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -88,49 +90,52 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div  class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand"> Easy Share</a>
+          <div  style="color: white" class="img_navbar col-md-8" style="text-align: center">
+            <h4>Easy Share</h4>
+          </div>
+            <div class="col-md-4">
+                <ul style="text-align: center;" class="navbar-nav mr-auto mt-2 mt-lg-0">
 
-            <ul style="text-align: center;" class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <!-- Here -->
+
+                            {% if user.is_authenticated %}
+
+                        <!--<li class="{% if request.resolver_match.url_name == "settings" %}active{% endif %}">
+                          <a class="nav-link" href="/accounts_app/settings">Settings</a>
+                        </li> - Settings -->
+
+
+                          <li class="list-navbar" style="{% if request.resolver_match.url_name == "home" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
+                          <a class="nav-link" href="/">Home</a>
+                          </li>
+
+
+                          <li class="list-navbar" style="{% if request.resolver_match.url_name == "settings" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
+                            <a class="nav-link" style="color: red" href="/accounts/settings">Settings</a>
+                          </li>
+
+                          <li class="list-navbar" >
+                          <a class="nav-link" href="/accounts/logout">Logout</a>
+                         </li>
+
+                      {% else %}
+                           <li class="list-navbar" style="{% if request.resolver_match.url_name == "home" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
+                             <a class="nav-link" href="/">Home</a>
+                          </li>
+                          <li class="list-navbar" style="{% if request.resolver_match.url_name == "register" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
+                          <a class="nav-link" href="/accounts/register">Register</a>
+                         </li>
+
+                          <li class="list-navbar" style="{% if request.resolver_match.url_name == "login" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
+                          <a class="nav-link" href="/accounts/login">Login</a>
+                        </li>
+
+                      {% endif %}
 
                 <!-- Here -->
 
-                        {% if user.is_authenticated %}
-
-                    <!--<li class="{% if request.resolver_match.url_name == "settings" %}active{% endif %}">
-                      <a class="nav-link" href="/accounts_app/settings">Settings</a>
-                    </li> - Settings -->
-
-
-                      <li class="list-navbar" style="{% if request.resolver_match.url_name == "home" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
-                      <a class="nav-link" href="/">Home</a>
-                      </li>
-
-
-                      <li class="list-navbar" style="{% if request.resolver_match.url_name == "settings" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
-                        <a class="nav-link" style="color: red" href="/accounts/settings">Settings</a>
-                      </li>
-
-                      <li class="list-navbar" >
-                      <a class="nav-link" href="/accounts/logout">Logout</a>
-                     </li>
-
-                  {% else %}
-                       <li class="list-navbar" style="{% if request.resolver_match.url_name == "home" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
-                         <a class="nav-link" href="/">Home</a>
-                      </li>
-                      <li class="list-navbar" style="{% if request.resolver_match.url_name == "register" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
-                      <a class="nav-link" href="/accounts/register">Register</a>
-                     </li>
-
-                      <li class="list-navbar" style="{% if request.resolver_match.url_name == "login" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
-                      <a class="nav-link" href="/accounts/login">Login</a>
-                    </li>
-
-                  {% endif %}
-
-            <!-- Here -->
-
-            </ul>
+                </ul>
+            </div>
           </div>
         </nav>
          {% block content %}

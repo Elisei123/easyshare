@@ -36,6 +36,11 @@
     }
 
     @media only screen and (max-width: 768px) {
+    #card-container{
+        padding: 12px;
+        padding-bottom: 7%;
+    }
+
   /* For phone: */
         .card_black{
             border-top-right-radius: 3%;
@@ -47,6 +52,12 @@
         .card_white{
             border-top-right-radius: 0%;
             border-bottom-right-radius: 0%;
+            border-bottom-left-radius: 3%;
+            border-bottom-right-radius: 3%;
+        }
+
+        input[type="text"]{
+            font-size:14px;
         }
     }
 
@@ -68,7 +79,7 @@
      {% if user.is_authenticated %}
          <!-- When you are log -->
             <h4 style="float: right">Hi, {{ user }}</h4>
-            <div style="margin-top: 15%; " class="row">
+            <div id="card-container" style="margin-top: 15%;" class="row">
                 <div style="background-color: black; padding: 5%;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.69);
 }" class="card_black col-sm" >
                     <h2 style="text-align: center; font-family: 'Teko'; font-size: 50px; color: white">

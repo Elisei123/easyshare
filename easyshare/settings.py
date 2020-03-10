@@ -24,7 +24,6 @@ SECRET_KEY = '6*ov4dkpdqbh)w)nn_j7^q06zp^^^8!z)-dz**ss)4-$a6n=5!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', "False") == "True"
-
 ALLOWED_HOSTS = ['*']
 
 
@@ -130,7 +129,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT='static'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "assets"),
+    os.path.join(BASE_DIR, "Web/assets"),
 ]
 
 MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
