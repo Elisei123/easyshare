@@ -70,18 +70,18 @@
         </div>
         {% endif %}
     {% endfor %}
-    <div style="padding-top: 10%;" id="login" class="login_cases">
-        <h3>Conectează-te la cont:</h3>
+    <div style="padding-top: 17%;" id="login" class="login_cases">
+        <h3>Login to your account:</h3>
         <form action="" method="post">
             {% csrf_token %}
             <div class="box-login">
-                <input style="padding-top: 13px;" type="text" name="username" placeholder="Nume cont"><br>
-                <input id="password" type="password" name="password" placeholder="Parola"><br>
-                <span>Vezi parola </span><input type="checkbox" id="box" onclick="VerificareBifa()"><br>
+                <input style="padding-top: 13px;" type="text" name="username" placeholder="Username"><br>
+                <input id="password" type="password" name="password" placeholder="Password"><br>
+                <span>See the password! </span><input type="checkbox" id="box" onclick="VerificareBifa()"><br>
                 <input id="submit" type="submit" value="Login">
             </div>
         </form>
-        <div style="margin-top: 10px;"><span>Nu ai cont? Dai click </span><a href="/accounts/register/">aici.</a>
+        <div style="margin-top: 10px;"><span>You don't have account? Click </span><a href="/accounts/register/">here.</a>
         </div>
 
     </div>
