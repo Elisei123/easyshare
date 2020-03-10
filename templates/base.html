@@ -13,7 +13,7 @@
       <script src='https://kit.fontawesome.com/a076d05399.js'></script>
       <link href="https://fonts.googleapis.com/css?family=Teko:400,700&display=swap" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Crete+Round&display=swap" rel="stylesheet">
-    <title>{% block title %}Easy Share - Home {% endblock title %}</title>
+      {% block title %} <title>Easy Share - Home </title> {% endblock title %}
   </head>
 
 
@@ -21,7 +21,7 @@
 
 
     .navbar-expand-lg .navbar-nav .nav-link {
-        font-size: 22px;
+        font-size: 18px;
         color: white;
         margin: 5px;
     }
@@ -31,8 +31,8 @@
     }
 
     .list-navbar:hover, #button-drop-gallery:hover{
-        background-color: #e49b00;
         border-radius: 10px;
+        background: linear-gradient(to left, #3399ff -44%, #ffffcc 150%) no-repeat center center fixed;
     }
 
     /* Style messages */
@@ -68,7 +68,7 @@
 
       body{
          /* v1: Blue   background: linear-gradient(to bottom, #99ccff -25%, #ffffff 500%) no-repeat center center fixed; */
-           background: linear-gradient(to left, #3399ff -44%, #ffffcc 150%) no-repeat center center fixed;;
+           background: linear-gradient(to left, #3399ff -44%, #ffffcc 150%) no-repeat center center fixed;
       }
 
     {% block style %}
@@ -111,7 +111,7 @@
 
 
                           <li class="list-navbar" style="{% if request.resolver_match.url_name == "settings" %}background-color:rgba(0,0,0,0.34); border-radius: 5px;{% endif %}">
-                            <a class="nav-link" style="color: red" href="/accounts/settings">Settings</a>
+                            <a class="nav-link"  href="/accounts/settings">Settings</a>
                           </li>
 
                           <li class="list-navbar" >
