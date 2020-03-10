@@ -315,8 +315,10 @@
                             <h3 style="font-family: 'Teko'; font-size: 50px;">Your share link: </h3>
 
                             <span style="width: 100%" class="btn btn-outline-dark">
-                                <input class="rounded" style="width: 100%; text-align: center; color: black; border: none" disabled="disabled"   type="text" value="https://easyshare.mailo.cloud/profile/{{ user }}" id="myInput">
+                                {% csrf_token %}
+                                <input class="rounded" style="width: 100%; text-align: center; color: black; border: none"   type="text" value="https://easyshare.mailo.cloud/profile/{{ user }}" id="myInput">
                             </span><br>
+                                {% csrf_token %}
                                 <button style="margin-top: 5px;" type="button" class="btn btn-dark" onclick="myFunction()">Copy link</button><span id="copy_link"></span>
                         </form>
                     </div>
@@ -338,7 +340,6 @@
     var copyText = document.getElementById("myInput");
     copyText.select();
     document.execCommand("Copy");
-    alert("Link-ul a fost copiat.")
   }
 </script>
 
