@@ -78,8 +78,9 @@ def home(request):
         paypal=paypal
     )
 
-    print("Obiectul a fost modificat (user:  ", request.user, ")")
-    return redirect('home')
+    print("Obiectul a fost modificat (user:  ", request.user, ")") # Test save
+    messages.success(request, 'The information was saved.')
+    return render(request, 'home.html')
 
 def name_profile_function(request, name_profile):
     # Search when name_profile exist in database
