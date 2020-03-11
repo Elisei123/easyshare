@@ -122,30 +122,25 @@ def settings(request):
         if user_curent.username == username:
             if user_curent.email != email:
                 if User.objects.filter(email=email).exists():
-                    messages.info(request, "Email-ul exista deja in baza de date.")
+                    messages.warning(request, "Email-ul exista deja in baza de date.")
                     return redirect('settings')
-                else:
-                    user_curent.email = email
-                    user_curent.save()
-                    messages.info(request, "Email-ul a fost schimbat cu succes!")
-                    return redirect('settings')
-            else:
-                messages.info(request, "Nu a fost nimic de modificat!")
+                user_curent.email = email
+                user_curent.save()
+                messages.success(request, "Email-ul a fost schimbat cu succes!")
                 return redirect('settings')
-        else:
-            if User.objects.filter(username=username).exists():
-                messages.info(request, "Nickname-ul exista deja in baza de date.")
-                return redirect('settings')
-            else:
-                if User.objects.filter(email=email).exists():
-                    messages.info(request, "Email-ul exista deja in baza de date.")
-                    return redirect('settings')
-                else:
-                    user_curent.email = email
-                    user_curent.username = username
-                    user_curent.save()
-                    messages.info(request, "Datele au fost schimbate cu succes!")
-                    return redirect('settings')
+            messages.warning(request, "Nu a fost nimic de modificat!")
+            return redirect('settings')
+        if User.objects.filter(username=username).exists():
+            messages.warning(request, "Nickname-ul exista deja in baza de date.")
+            return redirect('settings')
+        if User.objects.filter(email=email).exists():
+            messages.warning(request, "Email-ul exista deja in baza de date.")
+            return redirect('settings')
+        user_curent.email = email
+        user_curent.username = username
+        user_curent.save()
+        messages.success(request, "Datele au fost schimbate cu succes!")
+        return redirect('settings')
     else:
         return render(request, "settings.html")
 
