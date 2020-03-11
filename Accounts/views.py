@@ -113,9 +113,6 @@ def login(request):
 
 @login_required
 
-def logout(request):
-    auth.logout(request)
-    return redirect('/')
 
 def settings(request):
     if request.method == "POST":
@@ -151,3 +148,7 @@ def settings(request):
                     return redirect('settings')
     else:
         return render(request, "settings.html")
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
