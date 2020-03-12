@@ -78,9 +78,15 @@ def home(request):
         paypal=paypal
     )
 
-    print("Obiectul a fost modificat (user:  ", request.user, ")") # Test save
+    print("Retelele au fost modificate (user:", request.user, ")") # Test save
     messages.success(request, 'The information was saved.')
-    return render(request, 'home.html')
+    inputs_retele_socializare = retele_de_socializare_utilizator.objects.filter(user=request.user).first()
+    return render(request,
+                  'home.html',
+                  {
+                      'inputs_retele_socializare': inputs_retele_socializare,
+                  }
+    )
 
 def name_profile_function(request, name_profile):
     # Search when name_profile exist in database
