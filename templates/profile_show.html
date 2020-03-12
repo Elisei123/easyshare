@@ -161,7 +161,8 @@
                                   </a>
                               </div>
                             </div>
-                            <input type="text" class="form-control" name="Discord_input" disabled="disabled" value="{{ object_retele_sociale.discord }}"  placeholder="ex: Username#0000">
+                            <input type="text" class="form-control" name="Discord_input" value="{{ object_retele_sociale.discord }}" id="copy_discord">
+                              <input type="button" class="form-control col-3" value="Copy" onclick="copy_input_discord()">
                           </div>
                         </div>
                     </div>
@@ -177,7 +178,8 @@
                                                 <i style="color:#00AFF0;font-size: 21px;" class="fab fa-skype"></i>
                                         </div>
                                     </div>
-                                    <input disabled="disabled" type="text" class="form-control" name="Skype_input" value="{{ object_retele_sociale.skype }}">
+                                    <input type="text" class="form-control" name="Skype_input" value="{{ object_retele_sociale.skype }}" id="copy_skype">
+                                    <input type="button" class="form-control col-3" value="Copy" onclick="copy_input_skype()">
                                   </div>
                                 </div>
                               </div>
@@ -186,6 +188,18 @@
     </div>
 </div>
 
+     <script>
+  function copy_input_discord() {
+    var copyText = document.getElementById("copy_discord");
+    copyText.select();
+    document.execCommand("Copy");
+  }
 
+    function copy_input_skype() {
+    var copyText = document.getElementById("copy_skype");
+    copyText.select();
+    document.execCommand("Copy");
+  }
+</script>
 
 {% endblock content %}
