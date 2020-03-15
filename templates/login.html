@@ -19,17 +19,16 @@
         color:white;
     }
 
+       input[type="text"], input[type="password"]{
+        font-size:18px;
+        padding: 10px;
+    }
+
     #submit:hover{
         background-color: #2e2c27;
         color:white;
         transition: .3s ease-in-out;
     }
-
-           input[type="text"], input[type="password"]
-        {
-            font-size:18px;
-            padding: 10px;
-        }
 
 
 
@@ -61,7 +60,7 @@
 <div class="container">
     {% for mesaj in messages %}
         {% if mesaj.tags == "error" %}
-        <div id="message_Show" style="position: fixed; text-align: center"
+        <div id="message_show_error" style="position: fixed; text-align: center"
              class="alert alert-danger alert-dismissible fade show" role="alert">
             <strong style="color: red">Eroare!</strong> {{ mesaj }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">

@@ -43,7 +43,7 @@
     }
 
     /* Style messages */
-        #message_Show{    /* Notificarile care apar cu verde / rosu */
+        #message_show_error, #message_show_succes{    /* Notificarile care apar cu verde / rosu */
         right: 20%;
         left: 20%;
         top: 90%;
@@ -59,7 +59,7 @@
             text-align: right;
         }
 
-        #message_Show{
+        #message_show_error, #message_show_succes{
             right: 5%;
             left: 5%;
         }
@@ -154,9 +154,15 @@
     </div>
 
     <script>
-         $("#message_Show").hide().slideDown();
+         $("#message_show_error").hide().slideDown();
           setTimeout(function(){
-               $("#message_Show").hide();
+               $("#message_show_error").hide();
+          }, 4000);
+    </script>
+    <script>
+           $("#message_show_succes").hide().slideDown();
+          setTimeout(function(){
+               $("#message_show_succes").hide();
           }, 4000);
     </script>
 
