@@ -129,7 +129,7 @@ def settings(request):
     if request.method == "POST":
         user_curent = request.user
         username_input = request.POST['username']
-        email_curent = request.POST['email']
+        email_input = request.POST['email']
         parola_veche_input = request.POST['parola_veche']
         parola_noua1_input = request.POST['parola_noua1']
         parola_noua2_input = request.POST['parola_noua2']
@@ -161,31 +161,34 @@ def settings(request):
             user = authenticate(request, username=username_curent, password=parola_noua1_input)
             auth_login(request, user)
             messages.success(request, "Password saved!")
+        
+        if not is_email(email_input):
+            messages.error(request, 'The email is not valid ("example@gmail.com").')
             return redirect('settings')
-
+        
         if user_curent.username == username_input :    #Daca username-ul curent este la fel ca username-ul din input
-            if user_curent.email != email_curent:
-                if User.objects.filter(email=email_curent).exists():
+            if user_curent.email != email_input:
+                if User.objects.filter(email=email_input).exists():
                     messages.error(request, "The email already exists in the database.") #Email-ul exista deja in baza de date.
                     return redirect('settings')
-                user_curent.email = email_curent
+                user_curent.email = email_input
                 user_curent.save()
-                messages.success(request, "The email has been successfully changed!") #Email-ul a fost schimbat cu succes!
+                messages.success(request, "The data has been changed!")  # The data has been changed!
                 return redirect('settings')
-            messages.success(request, "There was nothing to change!") # Nu a fost nimic de modificat!
+            messages.success(request, "The data has been changed!") # The data has been changed!
             return redirect('settings')
         if User.objects.filter(username=username_input).exists():
             messages.error(request, "The nickname already exists in the database.") # Nickname-ul exista deja in baza de date.
             return redirect('settings')
-        if User.objects.filter(email=email_curent).exists() and user_curent.email != email_curent:
+        if User.objects.filter(email=email_input).exists() and user_curent.email != email_input:
             messages.error(request, "The email already exists in the database.") # Email-ul exista deja in baza de date.
             return redirect('settings')
-        if user_curent.email == email_curent and user_curent.username != username_input:
+        if user_curent.email == email_input and user_curent.username != username_input:
             user_curent.username = username_input
             user_curent.save()
-            messages.success(request, "Your nickname has been successfully changed!") # Nickname-ul a fost schimbat cu succes!
+            messages.success(request, "The data has been changed!") # The data has been changed!
             return redirect('settings')
-        user_curent.email = email_curent
+        user_curent.email = email_input
         user_curent.username = username_input
         user_curent.save()
         messages.success(request, "The data has been changed!") # Datele au fost schimbate cu succes!
