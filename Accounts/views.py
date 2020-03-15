@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User, auth
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login as auth_login
 from django.db.models.functions import Lower
 # Create your views here.
 
@@ -32,6 +32,18 @@ def UsernameValidator(string):
 
     return True
 
+
+def is_password_eligible(password):
+    if password == '': # Nu este un cuvant
+        return False, ''
+
+    if len(password) < 5:
+        return False, 'The password must contain minimum 5 characters.'
+
+    for litera in password: # Exista spatii
+        if litera == ' ':
+            return False, 'Password contains forbidden space.'
+    return True, ''
 
 def is_password_eligible(password):
     if len(password) < 5:
@@ -112,10 +124,45 @@ def login(request):
 
 
 def settings(request):
+    from django.contrib.auth.hashers import make_password, check_password
+
     if request.method == "POST":
         user_curent = request.user
         username_input = request.POST['username']
         email_curent = request.POST['email']
+        parola_veche_input = request.POST['parola_veche']
+        parola_noua1_input = request.POST['parola_noua1']
+        parola_noua2_input = request.POST['parola_noua2']
+        print(parola_veche_input)
+        if (parola_veche_input == '') and (parola_noua1_input == '') and (parola_noua2_input == '') :
+            print("Parola nu a fost selectata")
+        else:
+            #Verificare parola veche cu baza de date;
+            if not check_password(parola_veche_input, request.user.password):
+                messages.error(request, "The password in the database is not the same as the password in the input.")
+                return redirect('settings')
+
+            eligible_password1, password_error_msg = is_password_eligible(parola_veche_input)
+            eligible_password2, password_error_msg = is_password_eligible(parola_noua1_input)
+            eligible_password3, password_error_msg = is_password_eligible(parola_noua2_input)
+            if not eligible_password1 or not eligible_password2 or not eligible_password3:
+                messages.error(request, password_error_msg)
+                return redirect('settings')
+
+            if parola_noua1_input != parola_noua2_input:
+                print("Parola1 si parola2 nu sunt la fel")
+                messages.error(request, "The password is not the same!")
+                return redirect('settings')
+
+            pass_hash = make_password(parola_noua1_input)
+            request.user.password = pass_hash
+            username_curent = request.user.username
+            request.user.save()
+            user = authenticate(request, username=username_curent, password=parola_noua1_input)
+            auth_login(request, user)
+            messages.success(request, "Password saved!")
+            return redirect('settings')
+
         if user_curent.username == username_input :    #Daca username-ul curent este la fel ca username-ul din input
             if user_curent.email != email_curent:
                 if User.objects.filter(email=email_curent).exists():
@@ -141,7 +188,7 @@ def settings(request):
         user_curent.email = email_curent
         user_curent.username = username_input
         user_curent.save()
-        messages.success(request, "The username and password have been successfully changed!") # Datele au fost schimbate cu succes!
+        messages.success(request, "The data has been changed!") # Datele au fost schimbate cu succes!
         return redirect('settings')
 
         # TODO: Adauga sa poti schimba parola!

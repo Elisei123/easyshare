@@ -5,7 +5,7 @@
         text-align: center;
     }
 
-    input, textarea {
+    .inputs_beauty, textarea, #submit {
         text-align:center;
         background-color:rgba(255,255,255,0.3);
         border: 0px solid;
@@ -16,14 +16,16 @@
         font-size: 25px;
     }
 
-    #submit{
-        font-size: 20px;
-    }
-
     #submit:hover{
-        background-color: #524f48;
+        background-color: #2e2c27;
         color:white;
         transition: .3s ease-in-out;
+    }
+
+    #parola_veche::-webkit-input-placeholder,
+        #parola_noua1::-webkit-input-placeholder,
+        #parola_noua2::-webkit-input-placeholder{
+        font-size:20px;
     }
     {% endblock style %}
 
@@ -53,13 +55,46 @@
                 {% endfor %}
             {% endif %}
 
-            <form action="" method="POST">
+            <form action="" method="POST" novalidate>
                 {% csrf_token %}
-                <h6>Nickname</h6><input type="text" name="username" placeholder="Username" value="{{ user.username }}"><br><br>
-                <h6 style="padding-top: 5px">Email:</h6><input type="email" name="email" placeholder="Email" value="{{ user.email }}"><br>
-                <!-- TODO: Adauga sa modifici si parola -->
+                <h6>Nickname</h6><input class="inputs_beauty" type="text" name="username" placeholder="Username" value="{{ user.username }}"><br><br>
+                <h6 style="padding-top: 5px">Email</h6><input class="inputs_beauty" type="email" name="email" placeholder="Email" value="{{ user.email }}"><br>
+                <!-- Adaugare modificare parola -->
+                <br>
+                <input  class value="false" id = "myCheck" name="change_password" type="checkbox" onclick="myFunction() "><span> Change the password</span>
+                <div id="password-collapse" style="display: none">
+                    <br>
+                    <p> The password must contain minimum 5 characters. <span>*</span></p>
+                    <h6>Old password </h6>
+                    <input class="inputs_beauty" id="parola_veche" pattern=".{5,}" required title="The password must contain minimum 5 characters." name="parola_veche" type="password"
+                     placeholder="Type your old password!">
+                    <br><br><h6>New password</h6>
+                    <input class="inputs_beauty" id="parola_noua1" pattern=".{5,}" required title="The password must contain minimum 5 characters." name="parola_noua1" type="password"
+                           placeholder="Type your new password!">
+                    <br><br><h6>Confirm new password </h6>
+                    <input class="inputs_beauty" id="parola_noua2" pattern=".{5,}" required title="The password must contain minimum 5 characters." name="parola_noua2" type="password"
+                           placeholder="Type your new password!">
+                </div>
+                <br>
                 <br><input type="submit" name="submit" id="submit" value="Save!">
             </form>
-
         </div>
+
+        <script>
+    function myFunction() {
+        var checkBox = document.getElementById("myCheck");
+        var text = document.getElementById("password-collapse");
+        if (checkBox.checked === true){
+            var x = document.createElement("INPUT");
+            x.setAttribute("type", "checkbox");
+            text.style.display = "block";
+            checkBox.value = "true";
+        } else {
+            text.style.display = "none";
+            text.value = "false";
+            checkBox.value = "false";
+        }
+    }
+</script>
+
     {% endblock content %}

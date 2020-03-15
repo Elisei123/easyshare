@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1cd4514b-96a5-4acc-84b7-73965276b16b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile_show.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile_show.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/settings.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,14 +48,14 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Web/assets/img" />
+      <recent name="$PROJECT_DIR$/static/img" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Web/assets/img" />
       <recent name="$PROJECT_DIR$/assets/img" />
       <recent name="$PROJECT_DIR$/Photos" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Web/assets/img" />
-      <recent name="$PROJECT_DIR$/static/img" />
     </key>
   </component>
   <component name="RunManager">
@@ -184,6 +185,11 @@
       <workItem from="1583863997483" duration="9361000" />
       <workItem from="1583912468870" duration="8759000" />
       <workItem from="1583996351514" duration="3230000" />
+      <workItem from="1584041477585" duration="618000" />
+      <workItem from="1584189911994" duration="2242000" />
+      <workItem from="1584196848311" duration="2805000" />
+      <workItem from="1584259164521" duration="1427000" />
+      <workItem from="1584291263042" duration="5378000" />
     </task>
     <servers />
   </component>
@@ -207,22 +213,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1058" y="455" width="424" height="479" key="FileChooserDialogImpl/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1583237268627" />
-    <state width="2518" height="371" key="GridCell.Tab.0.bottom" timestamp="1584000497512">
+    <state width="2518" height="371" key="GridCell.Tab.0.bottom" timestamp="1584296367867">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2518" height="371" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1584000497512" />
-    <state width="2518" height="371" key="GridCell.Tab.0.center" timestamp="1584000497511">
+    <state width="2518" height="371" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1584296367867" />
+    <state width="2518" height="371" key="GridCell.Tab.0.center" timestamp="1584296367867">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2518" height="371" key="GridCell.Tab.0.center/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1584000497511" />
-    <state width="2518" height="371" key="GridCell.Tab.0.left" timestamp="1584000497511">
+    <state width="2518" height="371" key="GridCell.Tab.0.center/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1584296367867" />
+    <state width="2518" height="371" key="GridCell.Tab.0.left" timestamp="1584296367867">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2518" height="371" key="GridCell.Tab.0.left/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1584000497511" />
-    <state width="2518" height="371" key="GridCell.Tab.0.right" timestamp="1584000497511">
+    <state width="2518" height="371" key="GridCell.Tab.0.left/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1584296367867" />
+    <state width="2518" height="371" key="GridCell.Tab.0.right" timestamp="1584296367867">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2518" height="371" key="GridCell.Tab.0.right/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1584000497511" />
+    <state width="2518" height="371" key="GridCell.Tab.0.right/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1584296367867" />
     <state width="2518" height="282" key="GridCell.Tab.1.bottom" timestamp="1583999098952">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -251,17 +257,6 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="826" y="426" width="887" height="537" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.2560.1400/2560.112.1680.1050@0.0.2560.1400" timestamp="1582746337709" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Accounts/views.py</url>
-          <line>133</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/easyshare$runserver.coverage" NAME="runserver Coverage Results" MODIFIED="1583236960632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
